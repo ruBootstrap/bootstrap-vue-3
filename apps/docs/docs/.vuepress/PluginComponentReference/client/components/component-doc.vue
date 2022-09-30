@@ -1,8 +1,15 @@
 <template>
-  <b-row row tag="header" align-v="center">
+  <b-row
+    row
+    tag="header"
+    align-v="center"
+  >
     <b-col sm="9">
       <anchored-heading level="3">
-        <code class="notranslate bigger" translate="no">{{ tag }}</code>
+        <code
+          class="notranslate bigger"
+          translate="no"
+        >{{ tag }}</code>
       </anchored-heading>
     </b-col>
     <b-col sm="3">
@@ -13,7 +20,7 @@
         :href="githubURL"
         target="_blank"
       >
-        View source
+        Посмотреть источник
       </b-button>
     </b-col>
   </b-row>
@@ -21,18 +28,33 @@
   <ul class="component-ref-mini-toc my-3">
     <li v-if="propsItems && propsItems.length > 0">
       <a :href="`#comp-ref-${componentName}-props`">
-        <code class="notranslate" translate="no">{{ tag }}</code> Properties
+        Свойство
+        <code
+          class="notranslate"
+          translate="no"
+        >{{ tag }}</code>
       </a>
     </li>
     <li v-if="emits && emits.length > 0">
       <a :href="`#comp-ref-${componentName}-emits`">
-        <code class="notranslate" translate="no">{{ tag }}</code> Emits
+        Эмит
+        <code
+          class="notranslate"
+          translate="no"
+        >{{ tag }}</code>
       </a>
     </li>
   </ul>
-  <div v-if="propsItems && propsItems.length > 0" class="bd-content">
-    <anchored-heading :id="`comp-ref-${componentName}-props`" level="4" class="mb-3">
-      Properties
+  <div
+    v-if="propsItems && propsItems.length > 0"
+    class="bd-content"
+  >
+    <anchored-heading
+      :id="`comp-ref-${componentName}-props`"
+      level="4"
+      class="mb-3"
+    >
+      Свойства
     </anchored-heading>
     <b-table
       :items="propsItems"
@@ -45,20 +67,33 @@
       table-striped
     >
       <template #cell(prop)="{value}">
-        <code class="text-nowrap notranslate" translate="no">{{ value }}</code
-        ><br />
+        <code
+          class="text-nowrap notranslate"
+          translate="no"
+        >{{ value }}</code><br />
       </template>
       <template #cell(type)="{value}">
         <span v-html="value"></span>
       </template>
       <template #cell(defaultValue)="{value}">
-        <code v-if="value" class="word-wrap-normal notranslate" translate="no">{{ value }}</code>
+        <code
+          v-if="value"
+          class="word-wrap-normal notranslate"
+          translate="no"
+        >{{ value }}</code>
       </template>
     </b-table>
   </div>
-  <div v-if="emits && emits.length > 0" class="bd-content">
-    <anchored-heading :id="`comp-ref-${componentName}-emits`" level="4" class="mb-3">
-      Emits
+  <div
+    v-if="emits && emits.length > 0"
+    class="bd-content"
+  >
+    <anchored-heading
+      :id="`comp-ref-${componentName}-emits`"
+      level="4"
+      class="mb-3"
+    >
+      Эмиты
     </anchored-heading>
     <b-table
       :items="emits"
@@ -70,10 +105,19 @@
       table-striped
     >
       <template #cell(args)="{value, item}">
-        <ol v-if="value && value.length > 0" class="list-unstyled mb-0">
-          <li v-for="(arg, idx) in value" :key="`emit-${item.emit}-${arg.arg || idx}`">
+        <ol
+          v-if="value && value.length > 0"
+          class="list-unstyled mb-0"
+        >
+          <li
+            v-for="(arg, idx) in value"
+            :key="`emit-${item.emit}-${arg.arg || idx}`"
+          >
             <template v-if="arg.arg">
-              <code class="notranslate" translate="no">{{ arg.arg }}</code> -
+              <code
+                class="notranslate"
+                translate="no"
+              >{{ arg.arg }}</code> -
             </template>
             <span v-if="arg.description">{{ arg.description }}</span>
           </li>
@@ -81,71 +125,99 @@
       </template>
     </b-table>
   </div>
-  <div v-if="slots && slots.length > 0" class="bd-content">
-    <anchored-heading :id="`comp-ref-${componentName}-slots`" level="4" class="mb-3">
-      Slots
+  <div
+    v-if="slots && slots.length > 0"
+    class="bd-content"
+  >
+    <anchored-heading
+      :id="`comp-ref-${componentName}-slots`"
+      level="4"
+      class="mb-3"
+    >
+      Слоты
     </anchored-heading>
     <b-table
-        :items="slotsItems"
-        :fields="slotsFields"
-        primary-key="name"
-        table-class="bv-docs-table"
-        responsive="sm"
-        sort-icon-left
-        bordered
-        striped
-      >
-        <template #cell(name)="{ value, item }">
-          <code class="text-nowrap notranslate" translate="no">{{ value }}</code>
-          <b-badge v-if="item.version" variant="secondary">v{{ item.version }}+</b-badge>
-        </template>
-        <template #cell(scope)="{ value, detailsShowing, toggleDetails, item }">
+      :items="slotsItems"
+      :fields="slotsFields"
+      primary-key="name"
+      table-class="bv-docs-table"
+      responsive="sm"
+      sort-icon-left
+      bordered
+      striped
+    >
+      <template #cell(name)="{ value, item }">
+        <code
+          class="text-nowrap notranslate"
+          translate="no"
+        >{{ value }}</code>
+        <b-badge
+          v-if="item.version"
+          variant="secondary"
+        >v{{ item.version }}+</b-badge>
+      </template>
+      <template #cell(scope)="{ value, detailsShowing, toggleDetails, item }">
         <b-button
-            v-if="value"
-            variant="outline-info"
-            size="sm"
-            class="py-0"
-            @click="toggleDetails()"
-          >
+          v-if="value"
+          variant="outline-info"
+          size="sm"
+          class="py-0"
+          @click="toggleDetails()"
+        >
           {{ detailsShowing ? 'Hide scope' : 'Show scope' }}
-          </b-button>
-        </template>
-        <template #row-details="{ item }">
-          <b-table
-            :items="item.scope"
-            :fields="[{ key: 'prop', label: 'Property' }, 'type', 'description']"
-            primary-key="prop"
-            class="m-0"
-            dark
-            caption-top
-            small
-          >
-            <template #thead-top>
-              <b-tr>
-                <b-th colspan="3" class="text-center">
-                  <code class="text-nowrap notranslate" translate="no">{{ item.name }}</code>
-                  Slot scoped properties
-                </b-th>
-              </b-tr>
-            </template>
-            <template #cell(prop)="{ value, item: cellItem }">
-              <code class="text-nowrap notranslate" translate="no">{{ value }}</code>
-              <b-badge v-if="cellItem.version" variant="secondary">v{{ cellItem.version }}+</b-badge>
-            </template>
-            <template #cell(type)="{ value }">
-              <code class="text-nowrap notranslate" translate="no">{{ value || 'Any' }}</code>
-            </template>
-          </b-table>
-        </template>
+        </b-button>
+      </template>
+      <template #row-details="{ item }">
+        <b-table
+          :items="item.scope"
+          :fields="[{ key: 'prop', label: 'Property' }, 'type', 'description']"
+          primary-key="prop"
+          class="m-0"
+          dark
+          caption-top
+          small
+        >
+          <template #thead-top>
+            <b-tr>
+              <b-th
+                colspan="3"
+                class="text-center"
+              >
+                Свойство области действия слота
+                <code
+                  class="text-nowrap notranslate"
+                  translate="no"
+                >{{ item.name }}</code>
+              </b-th>
+            </b-tr>
+          </template>
+          <template #cell(prop)="{ value, item: cellItem }">
+            <code
+              class="text-nowrap notranslate"
+              translate="no"
+            >{{ value }}</code>
+            <b-badge
+              v-if="cellItem.version"
+              variant="secondary"
+            >v{{ cellItem.version }}+</b-badge>
+          </template>
+          <template #cell(type)="{ value }">
+            <code
+              class="text-nowrap notranslate"
+              translate="no"
+            >{{ value || 'Any' }}</code>
+          </template>
+        </b-table>
+      </template>
 
-      </b-table>
+    </b-table>
 
   </div>
 </template>
 <script lang="ts">
-import {resolveComponent, defineComponent, computed, ComputedRef, ConcreteComponent, ref, Ref} from 'vue'
+import { resolveComponent, defineComponent, computed, ComputedRef, ConcreteComponent, ref, Ref } from 'vue'
 import AnchoredHeading from './anchored-heading'
-import {hyphenate} from '../../../utils'
+import { hyphenate } from '../../../utils'
 // type definitions
 const SORT_THRESHOLD: number = 10
 
@@ -159,7 +231,7 @@ export default defineComponent({
   },
   name: 'BVComponentdoc',
   props: {
-    component: {type: String},
+    component: { type: String },
     propsMeta: {
       // For getting prop descriptions
       type: Array,
@@ -233,16 +305,16 @@ export default defineComponent({
           }
           // Describe type
           //For Setup Script Syntax prop types are not defined. 
-          let type = p?.type 
+          let type = p?.type
           let types = []
-          
+
           // Priortize type if defined in Reference 
-          if ( meta?.type){
+          if (meta?.type) {
             if (Array.isArray(meta?.type)) {
-             types = meta?.type.map((type) => type.name)
-          } else {
-            types = [meta?.type]
-          }
+              types = meta?.type.map((type) => type.name)
+            } else {
+              types = [meta?.type]
+            }
           }
           else if (Array.isArray(type)) {
             types = type.map((type) => type.name)
@@ -289,19 +361,19 @@ export default defineComponent({
       })
 
       return [
-        {key: 'prop', label: 'Property', sortable},
-        {key: 'type', label: 'Type', sortable},
-        {key: 'defaultValue', label: 'Default'},
-        ...(hasDescriptions ? [{key: 'description', label: 'Description'}] : []),
+        { key: 'prop', label: 'Свойство', sortable },
+        { key: 'type', label: 'Тип', sortable },
+        { key: 'defaultValue', label: 'По умолчанию' },
+        ...(hasDescriptions ? [{ key: 'description', label: 'Описание' }] : []),
       ]
     })
 
     const emitsFields: ComputedRef<any> = computed(() => {
       const sortable = component.emits?.length >= SORT_THRESHOLD
       return [
-        {key: 'emit', label: 'Emit', sortable},
-        {key: 'args', label: 'Arguments'},
-        {key: 'description', label: 'Description'},
+        { key: 'emit', label: 'Эмит', sortable },
+        { key: 'args', label: 'Аргументы' },
+        { key: 'description', label: 'Описание' },
       ]
     })
 
@@ -309,14 +381,14 @@ export default defineComponent({
       const sortable = props.slots.length >= SORT_THRESHOLD
       const hasScopedSlots = props.slots.some(s => s.scope)
       return [
-        { key: 'name', label: 'Name', sortable },
-        ...(hasScopedSlots ? [{ key: 'scope', label: 'Scoped' }] : []),
-        { key: 'description', label: 'Description' }
+        { key: 'name', label: 'Наименование', sortable },
+        ...(hasScopedSlots ? [{ key: 'scope', label: 'Область применения' }] : []),
+        { key: 'description', label: 'Описание' }
       ]
     })
 
     const slotsItems: Ref<any[]> = ref(
-       props.slots ? props.slots.map(slot => ({ ...slot as any})) : []
+      props.slots ? props.slots.map(slot => ({ ...slot as any })) : []
     )
 
 

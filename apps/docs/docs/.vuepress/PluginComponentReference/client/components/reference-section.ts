@@ -13,7 +13,7 @@ export default defineComponent({
   },
   render() {
     return [
-      h(AnchoredHeading, {id: 'component-reference'}, () => 'Component reference'),
+      h(AnchoredHeading, {id: 'component-reference'}, () => 'Справочник компонента'),
       this.pagedata.componentReference.meta.components.map(
         ({component, emits, rootEventListeners, slots, aliases, props: propsMeta, version}) => {
           return h(ComponentDoc, {

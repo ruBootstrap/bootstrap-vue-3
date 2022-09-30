@@ -1,27 +1,48 @@
 <template>
-  <h2 id="component-reference" tabindex="-1">
-    <a class="header-anchor" href="#component-reference" aria-hidden="true">#</a> Component
-    reference
+  <h2
+    id="component-reference"
+    tabindex="-1"
+  >
+    <a
+      class="header-anchor"
+      href="#component-reference"
+      aria-hidden="true"
+    >#</a> Справочник компонента
   </h2>
 
   <template v-for="component in reference.meta.components">
-    <h3 :id="component.component" tabindex="-1">
-      <a class="header-anchor" :href="`#${component.component}`" aria-hidden="true">#</a>
+    <h3
+      :id="component.component"
+      tabindex="-1"
+    >
+      <a
+        class="header-anchor"
+        :href="`#${component.component}`"
+        aria-hidden="true"
+      >#</a>
       <code>&lt;{{ component.component }}&gt;</code>
     </h3>
 
     <template v-if="component.props">
-      <h4 id="properties" tabindex="-1">
-        <a class="header-anchor" href="#properties" aria-hidden="true">#</a> Properties
+      <h4
+        id="properties"
+        tabindex="-1"
+      >
+        Свойство
+        <a
+          class="header-anchor"
+          href="#properties"
+          aria-hidden="true"
+        >#</a>
       </h4>
 
       <table>
         <thead>
           <tr>
-            <th>Property</th>
-            <th>Type</th>
-            <th>Default</th>
-            <th>Description</th>
+            <th>Свойство</th>
+            <th>Тип</th>
+            <th>По умолчанию</th>
+            <th>Описание</th>
           </tr>
         </thead>
         <tbody>
@@ -29,13 +50,11 @@
             <td class="text-nowrap">
               <code>{{ prop.prop }}</code>
             </td>
-            <td
-              v-html="
-                Array.isArray(prop.type)
-                  ? prop.type.map((item) => `<code>${item}</code>`).join(' or ')
-                  : `<code>${prop.type}</code>`
-              "
-            ></td>
+            <td v-html="
+              Array.isArray(prop.type)
+                ? prop.type.map((item) => `<code>${item}</code>`).join(' or ')
+                : `<code>${prop.type}</code>`
+            "></td>
             <td>
               <code>{{
                 typeof prop.default === 'string' ? `'${prop.default}'` : prop.default
@@ -48,15 +67,22 @@
     </template>
 
     <template v-if="component.events">
-      <h4 id="events" tabindex="-1">
-        <a class="header-anchor" href="#events" aria-hidden="true">#</a> Events
+      <h4
+        id="events"
+        tabindex="-1"
+      >
+        <a
+          class="header-anchor"
+          href="#events"
+          aria-hidden="true"
+        >#</a> События
       </h4>
 
       <table>
         <thead>
           <tr>
-            <th>Event</th>
-            <th>Description</th>
+            <th>Событие</th>
+            <th>Описание</th>
           </tr>
         </thead>
         <tbody>
@@ -71,15 +97,22 @@
     </template>
 
     <template v-if="component.slots">
-      <h4 id="slots" tabindex="-1">
-        <a class="header-anchor" href="#slots" aria-hidden="true">#</a> Slots
+      <h4
+        id="slots"
+        tabindex="-1"
+      >
+        <a
+          class="header-anchor"
+          href="#slots"
+          aria-hidden="true"
+        >#</a> Слоты
       </h4>
 
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Description</th>
+            <th>Наименование</th>
+            <th>Описание</th>
           </tr>
         </thead>
         <tbody>
@@ -97,6 +130,6 @@
 
 <script setup lang="ts">
 defineProps({
-  reference: {type: Object, required: true},
+  reference: { type: Object, required: true },
 })
 </script>

@@ -23,9 +23,11 @@ export default defineUserConfig({
   bundler: viteBundler(),
   theme: defaultTheme({
     logo: '/logo.png',
-    repo: 'https://github.com/cdmoro/bootstrap-vue-3',
+    repo: 'https://github.com/ruBootstrap/bootstrap-vue-3',
     docsDir: 'apps/docs/docs',
     editLink: true,
+    editLinkText: 'Изменить эту страницу',
+    lastUpdatedText: 'Последнее обновление',
     contributors: false,
     lastUpdated: true,
     colorMode: 'light',
