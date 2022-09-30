@@ -1,18 +1,18 @@
-# Accordion
+# Аккордеон
 
-Build vertically collapsing accordions in combination with `<b-collapse>` component.
+Создавайте вертикально сворачивающиеся аккордеоны в сочетании с компонентом `<b-collapse>`.
 
-## How it works
+## Как это работает
 
-The `<b-accordion-item>` uses the `<b-collapse>` component internally to make it collapsible. To render an accordion that’s expanded, add the `visible` property on the `<b-accordion-item>` component.
+`<b-accordion-item>` использует компонент `<b-collapse>` внутри, чтобы сделать его сворачиваемым. Чтобы отобразить развернутый аккордеон, добавьте свойство `visible` к компоненту `<b-accordion-item>`.
 
 ::: tip
-The animation effect of this component is dependent on the prefers-reduced-motion media query. See the [reduced motion section of our accessibility documentation](https://getbootstrap.com/docs/5.0/getting-started/accessibility/#reduced-motion).
+Анимационный эффект этого компонента зависит от медиа-запроса с уменьшенным движением. Смотрите раздел [уменьшенное движение в нашей документации по специальным возможностям](https://getbootstrap.com/docs/5.0/getting-started/accessibility/#reduced-motion).
 :::
 
-## Example
+## Пример
 
-Click the accordions below to expand/collapse the accordion content.
+Щелкните аккордеоны ниже, чтобы развернуть/свернуть содержимое аккордеона.
 
 <ClientOnly>
     <b-card class="text-dark">
@@ -61,7 +61,7 @@ Click the accordions below to expand/collapse the accordion content.
 
 ### Flush
 
-Add `flush` property to remove the default background-color, some borders, and some rounded corners to render accordions edge-to-edge with their parent container.
+Добавьте свойство `flush`, чтобы удалить цвет фона по умолчанию, некоторые границы и некоторые закругленные углы, чтобы отображать аккордеоны от края до края с их родительским контейнером.
 
 <ClientOnly>
     <b-card class="text-dark bg-light">
@@ -99,9 +99,9 @@ Add `flush` property to remove the default background-color, some borders, and s
 </b-accordion>
 ```
 
-### Always open
+### Всегда открыты
 
-Add `free` property to make accordion items stay open when another item is opened.
+Добавьте свойство `free`, чтобы элементы аккордеона оставались открытыми при открытии другого элемента.
 
 <ClientOnly>
     <b-card class="text-dark">

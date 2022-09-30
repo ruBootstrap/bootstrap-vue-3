@@ -3,8 +3,8 @@
   "name": "@bootstrap-vue-3/accordion",
   "version": "Alpha",
   "meta": {
-    "title": "Accordion",
-    "description": "Build vertically collapsing accordions in combination with <b-collapse> component.",
+    "title": "Аккордеон",
+    "description": "Создавайте вертикально сворачивающиеся аккордеоны в сочетании с компонентом <b-collapse>.",
     "components": [
       {
         "component": "BAccordion",
@@ -12,17 +12,17 @@
           {
             "prop": "flush",
             "type": "Booleanish",
-            "description": "remove the default background-color, some borders, and some rounded corners to render accordions edge-to-edge with their parent container"
+            "description": "удалите цвет фона по умолчанию, некоторые границы и некоторые закругленные углы, чтобы отображать аккордеоны от края до края с их родительским контейнером"
           },
           {
             "prop": "free",
             "type": "Booleanish",
-            "description": "accordion items stay open when another item is opened"
+            "description": "элементы аккордеона остаются открытыми, когда открывается другой элемент"
           },
           {
             "prop": "id",
             "type": "string",
-            "description": "The Id to be injected to accordian items and used to in b-collaspe for state managment"
+            "description": "Идентификатор, который будет введен в аккордеонные элементы и использован в b-collapse для управления состоянием"
           }
         ],
         "emits": [],
@@ -30,7 +30,7 @@
           {
             "scope": [],
             "name": "default",
-            "description": "Content to place in the Accordion"
+            "description": "Контент для размещения в Аккордеоне"
           }
         ]
       },
