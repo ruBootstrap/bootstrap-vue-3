@@ -5,15 +5,16 @@ import {componentReference} from './PluginComponentReference'
 import {defineUserConfig, defaultTheme, viteBundler} from 'vuepress'
 
 export default defineUserConfig({
-  lang: 'en-US',
-  base: '/bootstrap-vue-3/',
+  lang: 'ru-RU',
+  base: '/',
   title: 'BootstrapVue 3',
   head: [['link', {rel: 'icon', href: '/bootstrap-vue-3/favicon.ico'}]],
+  port: 8082,
   plugins: [
     searchPlugin({
       locales: {
         '/': {
-          placeholder: 'Search',
+          placeholder: 'Поиск',
         },
       },
     }),
@@ -32,21 +33,21 @@ export default defineUserConfig({
       mediumZoom: false,
     },
     navbar: [
-      {text: 'Home', link: '/'},
-      {text: 'Docs', link: '/getting-started/'},
+      {text: 'Главная', link: '/'},
+      {text: 'Документация', link: '/getting-started/'},
       {
-        text: 'Reference',
+        text: 'Справочник',
         children: [
-          {text: 'Components', link: '/components/'},
-          {text: 'Types', link: '/reference/types.md'},
-          {text: 'Comparison with BootstrapVue', link: '/reference/parityList.md'},
+          {text: 'Компоненты', link: '/components/'},
+          {text: 'Типы', link: '/reference/types.md'},
+          {text: 'Сравнение с BootstrapVue', link: '/reference/parityList.md'},
         ],
       },
     ],
     sidebar: {
       '/components/': [
         {
-          text: 'Components',
+          text: 'Компоненты',
           children: [
             '/components/README.md',
             '/components/Accordion.md',

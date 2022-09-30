@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">BootstrapVue 3</h1>
-<p align="center">Early (but lovely) implementation of Vue 3, Bootstrap 5 and Typescript</p>
+<p align="center">Ранняя (но прекрасная) реализация Vue 3, Bootstrap 5 и Typescript</p>
 
 <br>
 
@@ -34,13 +34,13 @@
   </a>
 </p>
 
-# Why BootstrapVue3?
+# Почему BootstrapVue3?
 
-BootstrapVue3 is an attempt to have [BootstrapVue](https://bootstrap-vue.org/) components in Vue3, Bootstrap 5, and typescript. Another goal is to have components written in a simple and readable way.
+BootstrapVue3 — это попытка использовать компоненты [BootstrapVue](https://bootstrap-vue.ru/) в Vue3, Bootstrap 5 и typescript. Другая цель состоит в том, чтобы компоненты были написаны простым и читабельным способом.
 
-As you may suppose, this library is heavily inspired by **BootstrapVue**, as well as its component properties, events, slots, directives, etc. We want to make it that way because we want to have compatibility with **BootstrapVue**, so it will be easy to switch between libraries.
+Как вы можете предположить, эта библиотека во многом вдохновлена **BootstrapVue**, а также ее свойствами компонентов, событиями, слотами, директивами и т. д. Мы хотим сделать ее такой, потому что хотим иметь совместимость с **BootstrapVue**, так что будет легко переключаться между библиотеками.
 
-# Install
+# Установка
 
 ```console
 # NPM
@@ -53,27 +53,28 @@ yarn add bootstrap bootstrap-vue-3 @popperjs/core
 pnpm add bootstrap bootstrap-vue-3 @popperjs/core
 ```
 
-# Contribute & support 🙌
+# Контрибьютинг и поддержка 🙌
 
-This project is still in **alpha version** so there is a lot of work to do. If you want to contribute you can:
+Этот проект все еще находится в **альфа-версии**, так что предстоит еще много работы. Если вы хотите внести свой вклад, вы можете:
 
-- submit an [issue](https://github.com/cdmoro/bootstrap-vue-3/issues/new)
-- or better, a [pull request](https://github.com/cdmoro/bootstrap-vue-3/pulls)
-- or even better, visit [my Patreon page](https://patreon.com/cdmoro) and support me 😄
+- отправить [issue](https://github.com/cdmoro/bootstrap-vue-3/issues/new)
+- или лучше [pull request](https://github.com/cdmoro/bootstrap-vue-3/pulls)
+- или еще лучше, посетите [мою страницу на Patreon](https://patreon.com/cdmoro) и поддержите меня 😄
 
-Read our [Contribution Guide](https://github.com/cdmoro/bootstrap-vue-3/blob/main/CONTRIBUTING.md) on how to start helping
+Прочтите наше [Руководство по участию](https://github.com/cdmoro/bootstrap-vue-3/blob/main/CONTRIBUTING.md), чтобы узнать, как начать помогать
 
-## One-time donations
+## Разовые пожертвования
 
-Or if you prefer you can make a one-time donation through these channels:
+Или, если вы предпочитаете, вы можете сделать единовременное пожертвование через эти каналы:
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/cdmoro)
-[![Invitame un café en cafecito.app](https://cdn.cafecito.app/imgs/buttons/button_2.svg)](https://cafecito.app/cdmoro)
+[!["Купи мне кофе"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/cdmoro)
+[![Купи мне кофе в cafecito.app](https://cdn.cafecito.app/imgs/buttons/button_2.svg)](https://cafecito.app/cdmoro)
 
-# Links
+# Ссылки
 
 - :blue_book: [Documentation](https://cdmoro.github.io/bootstrap-vue-3/)
+- :blue_book: [Перевод Документации](https://cdmoro.bootstrap-vue.ru/)
 
-# License
+# Лицензия
 
-Released under the MIT [Licence](./LICENSE). Copyright (c) BootstrapVue3.
+Выпущено по MIT [Лицензии](./LICENSE). Авторское право (c) BootstrapVue3.

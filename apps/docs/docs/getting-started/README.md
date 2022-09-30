@@ -2,47 +2,47 @@
 sidebar: auto
 ---
 
-# Introduction
+# Введение
 
-Get started with BootstrapVue3 and Bootstrap v5, the world’s most popular framework for building responsive, mobile-first sites.
+Начните работу с BootstrapVue3 и Bootstrap v5, самой популярной в мире платформы для создания адаптивных мобильных сайтов.
 
-::: danger NOT PRODUCTION READY
-This project is still in **alpha version**. There is a lot of work to do, if you want to contribute you can use it and submit an [issue](https://github.com/cdmoro/bootstrap-vue-3/issues) or even better, a [pull request](https://github.com/cdmoro/bootstrap-vue-3/pulls) 😄.
+::: danger НЕ ГОТОВО К ПРОДАКШЕНУ
+Этот проект все еще находится в **альфа-версии**. Предстоит много работы, если вы хотите внести свой вклад, вы можете использовать его и отправить [issue](https://github.com/cdmoro/bootstrap-vue-3/issues) или, что еще лучше, [pull request](https://github.com/cdmoro/bootstrap-vue-3/pulls) 😄.
 :::
 
-## Why BootstrapVue3?
+## Почему BootstrapVue3?
 
-BootstrapVue3 is an attempt to have the [BootstrapVue](https://bootstrap-vue.org/) components in Vue3, Bootstrap 5, and typescript. Another goal is to have components written in a simple and readable way.
+BootstrapVue3 — это попытка использовать компоненты [BootstrapVue](https://bootstrap-vue.org/) в Vue3, Bootstrap 5 и typescript. Другая цель состоит в том, чтобы компоненты были написаны простым и читабельным способом.
 
-As you may suppose, this library is heavily inspired by [BootstrapVue](https://bootstrap-vue.org/), as well as the components properties, events, slots, directives, etc. We want to make it that way because we want to have compatibility with BootstrapVue, so it will be easy to switch between libraries.
+Как вы можете предположить, эта библиотека во многом вдохновлена [BootstrapVue](https://bootstrap-vue.org/), а также свойствами компонентов, событиями, слотами, директивами и т. д. Мы хотим сделать ее такой, потому что мы хотим иметь совместимость с BootstrapVue, чтобы было легко переключаться между библиотеками.
 
-## Contribute & support 🙌
+## Вклад и поддержка 🙌
 
-This project is still in **alpha version** so there is a lot of work to do. If you want to contribute you can:
+Этот проект все еще находится в **альфа-версии**, так что предстоит еще много работы. Если вы хотите внести свой вклад, вы можете:
 
-- submit an [issue](https://github.com/cdmoro/bootstrap-vue-3/issues/new)
-- or better, a [pull request](https://github.com/cdmoro/bootstrap-vue-3/pulls)
-- or even better, visit [my patreon page](https://patreon.com/cdmoro) and support me 😄
+- отправить [issue](https://github.com/cdmoro/bootstrap-vue-3/issues/new)
+- или лучше [pull request](https://github.com/cdmoro/bootstrap-vue-3/pulls)
+- или еще лучше, посетите [мою страницу patreon](https://patreon.com/cdmoro) и поддержите меня 😄
 
-### One-time donations
+## Разовые пожертвования
 
-Or if you prefer you can make a one-time donation through these channels:
+Или, если вы предпочитаете, вы можете сделать единовременное пожертвование через эти каналы:
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/cdmoro)
-[![Invitame un café en cafecito.app](https://cdn.cafecito.app/imgs/buttons/button_2.svg)](https://cafecito.app/cdmoro)
+[!["Купи мне кофе"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/cdmoro)
+[![Купи мне кофе в cafecito.app](https://cdn.cafecito.app/imgs/buttons/button_2.svg)](https://cafecito.app/cdmoro)
 
-## Requisites
+## Требования
 
-In order to use this library you have to install these packages:
+Чтобы использовать эту библиотеку, вам необходимо установить эти пакеты:
 
 - [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/) `5.x.x`
 - [Vue.js](https://v3.vuejs.org/) `3.x.x`
 
-## Install
+## Установить
 
-### Installation - Vue.js
+### Установка - Vue.js
 
-To install this library you can use Yarn, NPM, or PNPM:
+Для установки этой библиотеки вы можете использовать Yarn, NPM или PNPM:
 
 <CodeGroup>
   <CodeGroupItem title="YARN" active>
@@ -70,14 +70,14 @@ pnpm add bootstrap bootstrap-vue-3 @popperjs/core
   </CodeGroupItem>
 </CodeGroup>
 
-And in your `main.js/ts`:
+И в вашем `main.js/ts`:
 
 ```javascript
 import {createApp} from 'vue'
 import BootstrapVue3 from 'bootstrap-vue-3'
 
-// Optional, since every component import their Bootstrap functionality
-// the following line is not necessary
+// Необязательно, так как каждый компонент импортирует свою функциональность Bootstrap, 
+// следующая строка не нужна
 // import 'bootstrap'
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -88,13 +88,11 @@ app.use(BootstrapVue3)
 app.mount('#app')
 ```
 
-### Installation - Nuxt.js 3
+### Установка - Nuxt.js 3
 
-**Nuxt is not officially supported**. Various Bootstrap JavaScript elements contain references to 'Document' and 'Window', which will cause breaking issues during server-side rendering. Until Bootstrap v5 implements fixes for these, Bootstrap-vue-3 cannot officially support Nuxt3 and SSR applications 
+Как и при установке Vue.js.
 
-As with the Vue.js installation.
-
-In your Nuxt3 application, install the necessary packages for `bootstrap-vue-3`
+В приложении Nuxt3 установите необходимые пакеты для `bootstrap-vue-3`
 
 <CodeGroup>
   <CodeGroupItem title="YARN" active>
@@ -122,7 +120,7 @@ pnpm add bootstrap bootstrap-vue-3 @popperjs/core
   </CodeGroupItem>
 </CodeGroup>
 
-Open your `nuxt.config.ts` or `nuxt.config.js` file and configure your application to use `bootstrap-vue-3`. The components will be imported automatically as needed.
+Откройте файл `nuxt.config.ts` или `nuxt.config.js` и настройте приложение на использование `bootstrap-vue-3`. Компоненты будут автоматически импортированы по мере необходимости.
 
 ```javascript
 import {defineNuxtConfig} from 'nuxt3'
@@ -133,20 +131,20 @@ export default defineNuxtConfig({
 })
 ```
 
-Enjoy it in your app without import.
+Наслаждайтесь этим в своем приложении без импорта.
 
 ```vue
 <template>
   <div>
-    <BButton variant="primary">Test</BButton>
+    <BButton variant="primary">Тест</BButton>
   </div>
 </template>
 ```
 
-## Comparison with BoostrapVue
+## Сравнение с BoostrapVue
 
-As we said, we based this project in [BootstrapVue](https://bootstrap-vue.org/). We consider BootstrapVue as the best implementation of Bootstrap `v4`, so a good approach is to replicate every BootstrapVue component, as well their props, events, etc. and add the new features of Bootstrap `v5`.
+Как мы уже говорили, мы создали этот проект в [BootstrapVue](https://bootstrap-vue.org/). Мы считаем BootstrapVue лучшей реализацией Bootstrap `v4`, поэтому хороший подход состоит в том, чтобы реплицировать каждый компонент BootstrapVue, а также их свойства, события и т. д. и добавлять новые функции Bootstrap `v5`.
 
-<!-- To follow this, we'll implement a parity list where you can view the progress of covered components. This section is not ready yet. -->
+<!-- Чтобы следовать этому, мы реализуем список четности, где вы можете просматривать ход выполнения покрытых компонентов. Этот раздел еще не готов. -->
 
-You can view the full list in the following [section](../reference/parityList.md).
+Вы можете просмотреть полный список в следующем [разделе](../reference/parityList.md).
