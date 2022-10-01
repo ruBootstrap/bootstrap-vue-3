@@ -431,7 +431,7 @@ You can always access the native `input` and `change` events by using the `.nati
 component reference (i.e. assign a `ref` to your `<b-form-textarea ref="foo" ...>`, capture the ref in a variable and use
 `input.propertyName` or `input.methodName(...)`).
 
-### example
+### Пример
 
 <ClientOnly>
   <b-card>

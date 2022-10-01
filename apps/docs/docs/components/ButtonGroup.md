@@ -2,7 +2,7 @@
 
 > Group a series of buttons together on a single line or stack them in a vertical column with `<b-button-group>`.
 
-## Overview
+## Обзор
 
 Button Groups are an easy way to group a series of buttons together.
 

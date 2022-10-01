@@ -5,7 +5,7 @@
 > appearance such as color variant and roundness, and optionally supports acting as a button, link
 > or ~~[router link](/docs/reference/router-links)~~.
 
-## Overview
+## Обзор
 
 Avatars are lightweight components, which render inline by default, so that they are vertically
 centered beside any adjoining plain text. They also can be used as children of other components.

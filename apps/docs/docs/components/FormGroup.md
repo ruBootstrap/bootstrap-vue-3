@@ -384,7 +384,7 @@ BFormGroup supports the new and fancy [Floating labels](https://getbootstrap.com
 
 You can make a floating label by setting the property `floating` to true and specify a placeholder on the `<b-form-input>`.
 
-### Example
+### Пример
 
 <ClientOnly>
   <b-card>

@@ -4,7 +4,7 @@
 > component and its content. It signals to the user of a state change within the element or
 > component and can be used for creating loaders, warnings/alerts, prompts, and more.
 
-## Overview
+## Обзор
 
 `<b-overlay>` can be used to obscure almost anything. [Example use cases](#use-case-examples) would
 be forms, tables, delete confirmation dialogs, or anywhere you need to signal that the application
