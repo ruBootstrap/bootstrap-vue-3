@@ -1,14 +1,13 @@
-# Avatar
+# Аватар
 
-> Avatars are a custom component, and are typically used to display a user profile as a
-> picture, an icon, or short text. `<b-avatar>` provides several props for customizing its
-> appearance such as color variant and roundness, and optionally supports acting as a button, link
-> or ~~[router link](/docs/reference/router-links)~~.
+> Аватары — это настраиваемый компонент, который обычно используется для отображения профиля пользователя
+> в виде изображения, иконки или короткого текста. `<b-avatar>` предоставляет несколько реквизитов для
+> настройки внешнего вида, таких как вариант цвета и округлость, а также дополнительно поддерживает действие
+> в качестве кнопки, ссылки или ~~[ссылки маршрутизатора](/docs/reference/router-links)~~.
 
 ## Обзор
 
-Avatars are lightweight components, which render inline by default, so that they are vertically
-centered beside any adjoining plain text. They also can be used as children of other components.
+Аватары — это легковесные компоненты, которые по умолчанию отображаются встроенными, так что они центрируются по вертикали рядом с любым примыкающим обычным текстом. Их также можно использовать в качестве потомков других компонентов.
 
 <ClientOnly>
   <b-card>
@@ -80,19 +79,15 @@ centered beside any adjoining plain text. They also can be used as children of o
 </b-card>
 ```
 
-## Avatar types
+## Типы аватаров
 
-The avatar content can be either an image, an icon, or short text string. Avatar content defaults
-to the [`'person-fill'` icon](/docs/icons) when no other content is specified.
+Содержимое аватара может быть изображением, иконкой или короткой текстовой строкой. Содержимое аватара по умолчанию представляет собой [иконку `'person-fill'`](/docs/icons), если не указано другое содержимое.
 
-You can also supply custom content via the default slot, although you may need to apply additional
-styling on the content.
+Вы также можете предоставить пользовательский контент через слот по умолчанию, хотя вам может потребоваться применить к контенту дополнительные стили.
 
-### Image content
+### Содержимое изображения
 
-Use the `src` prop to specify a URL of an image to use as the avatar content. The image should have
-an aspect ratio of `1:1` (meaning the width and height should be equal), otherwise image aspect
-distortion will occur. The image will be scaled up or down to fit within the avatar's bounding box.
+Используйте свойство `src`, чтобы указать URL-адрес изображения, которое будет использоваться в качестве содержимого аватара. Изображение должно иметь соотношение сторон `1:1` (это означает, что ширина и высота должны быть равны), в противном случае произойдет искажение пропорций изображения. Изображение будет увеличено или уменьшено, чтобы соответствовать ограничивающей рамке аватара.
 
 <ClientOnly>
   <b-card>
@@ -108,25 +103,18 @@ distortion will occur. The image will be scaled up or down to fit within the ava
 </b-card>
 ```
 
-**Notes:**
+**Примечания:**
 
-- When using a module bundler and project relative image URLs, please refer to the
-  [Component img src resolving](/docs/reference/images) reference section for additional details.
-- The `src` prop takes precedence over the `icon` and `text` props.
-- <span class="badge badge-secondary">2.11.0+</span> If the image fails to load, the avatar will
-  fall back to the value of the `icon` or `text` props. If neither the `icon` or `text` props are
-  provided, then the default avatar icon will be shown. Also, when the image fails to load, the
-  `img-error` event will be emitted.
-- [Variant colors](#variants) when using images not normally visible, unless the image fails load.
-  The variant will affect the focus styling when the image avatar is also an
-  [actionable avatar](#actionable-avatars).
+- При использовании сборщика модулей и относительных URL-адресов изображений проекта смотрите дополнительные сведения в справочном разделе [Разрешение исходного кода компонента img](/docs/reference/images).
+- Свойство `src` имеет приоритет над свойствами `icon` и `text`.
+- <span class="badge badge-secondary">2.11.0+</span> Если изображение не загружается, аватар возвращается к значению свойств `icon` или `text`. Если свойства `icon` или `text` не указаны, будет отображаться значок аватара по умолчанию. Кроме того, когда изображение не загружается, будет сгенерировано событие `img-error`.
+- [Вариантные цвета](#variants) при использовании изображений, которые обычно не видны, если только изображение не загружается. Вариант повлияет на стиль фокуса, когда изображение аватара также является [активным аватаром](#actionable-avatars).
 
-### Icon content
+### Содержимое иконки
 
-TODO this should work with any icon font, eg icon="fa fa-cogs"
+TODO это должно работать с любым шрифтом иконок, например, icon="fa fa-cogs"
 
-Easily use one of [BootstrapVue's icons](/docs/icons) as the avatar content via the `icon` prop. The
-prop should be set to a valid icon name. Icons will scale respective to the [`size` prop](#sizing).
+Легко используйте один из [иконок BootstrapVue](/docs/icons) в качестве содержимого аватара с помощью параметра `icon`. Свойство должно быть установлено на допустимое имя значка. Иконки будут масштабироваться в соответствии со [свойством `size`](#sizing).
 
 <ClientOnly>
   <b-card>
@@ -146,17 +134,14 @@ prop should be set to a valid icon name. Icons will scale respective to the [`si
 </b-card>
 ```
 
-**Notes:**
+**Примечания:**
 
-- The `icon` prop takes precedence over the `text` prop.
-- If the `text`, `src`, or `icon` props are not provided _and_ the [default slot](#custom-content)
-  has no content, then the `person-fill` icon will be used.
+- Свойство `icon` имеет приоритет над свойством `text`.
+- Если свойства `text`, `src` или `icon` не предоставлены _и_ [слот по умолчанию](#custom-content) не имеет содержимого, то будет использоваться иконка `person-fill`.
 
-### Text content
+### Текстовое содержимое
 
-You can specify a short string as the content of an avatar via the `text` prop. The string should be
-short (1 to 3 characters), and will be transformed via CSS to be all uppercase. The font size will
-be scaled relative to the [`size` prop setting](#sizing).
+Вы можете указать короткую строку в качестве содержимого аватара через свойство `text`. Строка должна быть короткой (от 1 до 3 символов) и будет преобразована с помощью CSS, чтобы все символы были в верхнем регистре. Размер шрифта будет масштабироваться относительно [параметра свойства `size`](#sizing).
 
 <ClientOnly>
   <b-card>
@@ -176,10 +161,9 @@ be scaled relative to the [`size` prop setting](#sizing).
 </b-card>
 ```
 
-### Custom content
+### Пользовательский контент
 
-Use the `default` slot to render custom content in the avatar, for finer grained control of its
-appearance, or if using custom icons or SVGs e.g.:
+Используйте слот `default` для отображения пользовательского контента в аватаре, для более точного управления его внешним видом или при использовании пользовательских значков или SVG, например:
 
 <ClientOnly>
   <b-card>
@@ -195,19 +179,17 @@ appearance, or if using custom icons or SVGs e.g.:
 </b-card>
 ```
 
-**Notes:**
+**Примечания:**
 
-- The default slot takes precedence over the `text`, `src` and `icon` props.
-- The default slot content will be wrapped in a `<span>` element to ensure proper centering.
-- You may need additional styling applied to the custom content to compensate for the
-  [shape of avatar component](#rounding).
+- Слот по умолчанию имеет приоритет над свойствами `text`, `src` и `icon`.
+- Содержимое слота по умолчанию будет заключено в элемент `<span>`, чтобы обеспечить правильное центрирование.
+- Возможно, вам потребуется применить дополнительные стили к пользовательскому контенту, чтобы компенсировать [форму компонента аватара](#rounding).
 
-## Styling
+## Стайлинг
 
-### Variants
+### Варианты
 
-Use the `variant` prop to specify one of Bootstrap theme variant colors. The default variant is
-`secondary`.
+Используйте свойство `variant`, чтобы указать один из вариантов цветов темы Bootstrap. Вариант по умолчанию — `secondary`.
 
 <ClientOnly>
   <b-card>
@@ -235,7 +217,7 @@ Use the `variant` prop to specify one of Bootstrap theme variant colors. The def
 </b-card>
 ```
 
-When displaying an icon as avatar, icon colors are calculated based on the `variant` property. The result is either `light` or `dark`. You can override the calculated icon color by specifying the `icon-variant` property.
+При отображении иконки в качестве аватара цвета иконки рассчитываются на основе свойства `variant`. Результат либо `light`, либо `dark`. Вы можете переопределить рассчитанный цвет иконки, указав свойство `icon-variant`.
 
 <ClientOnly>
   <b-card>
@@ -263,7 +245,7 @@ When displaying an icon as avatar, icon colors are calculated based on the `vari
 </b-card>
 ```
 
-When displaying text inside the avatar, text colors are calculated based on the `variant` property. The result is either `light` or `dark`. You can override the calculated icon color by specifying the `icon-variant` property.
+При отображении текста внутри аватара цвета текста рассчитываются на основе свойства `variant`. Результат либо `light`, либо `dark`. Вы можете переопределить рассчитанный цвет значка, указав свойство `icon-variant`.
 
 <ClientOnly>
   <b-card>
@@ -287,12 +269,9 @@ When displaying text inside the avatar, text colors are calculated based on the 
 </b-card>
 ```
 
-### Sizing
+### Размеры
 
-By default, avatars are sized to `2.5em` (which is relative to the current font size). You can
-change the size of the avatar by changing the current font size, or use the prop `size` to specify
-an explicit size. The sizes `sm`, `md` and `lg` default to `1.5em`, `2.5em` and `3.5em`. Numbers get
-converted to pixel values. Any other value _must_ include the units (such as `px`, `em`, or `rem`).
+По умолчанию аватары имеют размер `2.5em` (относительно текущего размера шрифта). Вы можете изменить размер аватара, изменив текущий размер шрифта, или использовать свойство `size`, чтобы указать явный размер. Размеры `sm`, `md` и `lg` по умолчанию равны `1.5em`, `2.5em` и `3.5em`. Числа преобразуются в значения пикселей. Любое другое значение _должно_ включать единицы измерения (такие как `px`, `em` или `rem`).
 
 <ClientOnly>
   <b-card>
@@ -316,11 +295,11 @@ converted to pixel values. Any other value _must_ include the units (such as `px
 </b-card>
 ```
 
-**Note:** Avatars are _always_ rendered with an aspect ratio of `1:1`.
+**Примечание:** Аватары _всегда_ отображаются с соотношением сторон `1:1`.
 
 ### Square
 
-Prefer a square avatar? simply set the `square` prop to `true`.
+Предпочитаете квадратную аватарку? просто установите свойство `square` в значение `true`.
 
 <ClientOnly>
   <b-card>
@@ -336,10 +315,9 @@ Prefer a square avatar? simply set the `square` prop to `true`.
 
 ### Rounding
 
-`<b-avatar>` renders with a circular border radius. You can change the rounding by setting the prop
-`rounded` to one of the values `true`, `'circle'`, `'sm'`, `'lg'`, `'top'`, `'left'`, `'right'`, or `'bottom'`.
-When set to `true` (or the empty string `''`), it uses the Bootstrap default of medium rounding.
-When set to `circle`, it uses a border radius of 50%, resulting in a circle.
+`<b-avatar>` отображается с круглым радиусом границы. Вы можете изменить округление, установив свойство `rounded` в одно из значений `true`, `'circle'`, `'sm'`, `'lg'`, `'top'`, `'left'`, `'right'` или `'bottom'`.
+Если задано значение `true` (или пустая строка `''`), используется значение по умолчанию Bootstrap для среднего округления.
+Если задано значение `circle`, используется радиус границы 50%, в результате получается круг.
 
 <ClientOnly>
   <b-card>
@@ -373,33 +351,26 @@ When set to `circle`, it uses a border radius of 50%, resulting in a circle.
 </b-card>
 ```
 
-**Notes:**
+**Примечания:**
 
-- The `square` prop takes precedence over the `rounded` prop.
-- Alternatively to the `square` prop, you can set the `rounded` prop to the string `'0'` to
-  achieve a square avatar.
+- Свойство `square` имеет приоритет над свойством `rounded`.
+- В качестве альтернативы свойству `square` вы можете установить значение `rounded` на строку `'0'`, чтобы получить квадратный аватар.
 
-### Alignment
+### Выравнивание
 
-By default, `<b-avatar>` will be vertically centered with its adjoining content. In some cases you
-may want to alter the alignment, such as ensuring that a text-only avatar aligns its text with the
-adjoining text. Simply set a [vertical alignment utility](/docs/reference/utility-classes) class on
-the component, such as `<b-avatar class="align-baseline" ...>` or
-`<b-avatar class="align-top" ...>`, etc.
+По умолчанию `<b-avatar>` будет центрирован по вертикали вместе с прилегающим к нему содержимым. В некоторых случаях вы можете захотеть изменить выравнивание, например, убедиться, что аватар, состоящий только из текста, выравнивает свой текст с соседним текстом. Просто установите для компонента класс [утилиты вертикального выравнивания](/docs/reference/utility-classes) , например, `<b-avatar class="align-baseline" ...>` или
+`<b-avatar class="align-top" ...>` и т. д.
 
-## Actionable avatars
+## Активные аватары
 
-Easily create avatars that respond to clicks, ~~or avatars that change the URL/route when clicked~~.
-Actionable avatars will appear in the document tab sequence, and are accessible for both screen
-reader and keyboard-only users.
+Легко создавайте аватары, которые реагируют на клики, ~~или аватары, которые меняют URL/маршрут при нажатии~~.
+Активные аватары будут отображаться в последовательности вкладок документа и доступны как для программ чтения с экрана, так и для пользователей, использующих только клавиатуру.
 
-Image avatars, when actionable, employ a basic scale transform on the image when hovered.
+Аватары-изображения, когда они активны, используют базовое преобразование масштаба изображения при наведении курсора.
 
-### Button
+### Кнопка
 
-Want to trigger the opening of a modal or trigger an action? Set the `button` prop to instruct
-`<b-avatar>` to render as a `<button>` element. When rendered as a button, the component will emit
-the `click` event whenever clicked.
+Хотите вызвать открытие модального окна или запустить действие? Установите свойство `button`, чтобы указать `<b-avatar>` отображать как элемент `<button>`. При отображении в виде кнопки компонент будет генерировать событие `click` при каждом нажатии.
 
 <ClientOnly>
   <b-card>
@@ -445,14 +416,12 @@ the `click` event whenever clicked.
 </b-card>
 ```
 
-The prop `button-type` can be used to control the type of button to render. Supported values are
-`'button'` (the default), `'submit'`, or `'reset'`.
+Свойство `button-type` можно использовать для управления типом отображаемой кнопки. Поддерживаемые значения: `'button'` (по умолчанию), `'submit'` или `'reset'`.
 
-### Link
+### Ссылка
 
-Fancy an avatar as a link or router link? Simply set either the `href` or ~~`to`~~ props (respectively).
-~~The `to` prop can either be a string path, or a `Location` object. The `to` prop requires that
-`Vue router` (or equivalent) be installed~~.
+Хотите использовать аватар в качестве ссылки или ссылки на маршрутизатор? Просто установите свойство `href` или ~~`to`~~ (соответственно).
+~~Свойство `to` может быть либо строковым путем, либо объектом `Location`. Свойство `to` требует, чтобы был установлен `Vue router` (или аналогичный)~~.
 
 <ClientOnly>
   <b-card>
@@ -492,16 +461,14 @@ Fancy an avatar as a link or router link? Simply set either the `href` or ~~`to`
 </b-card>
 ```
 
-**Note:**
+**Примечание:**
 
-- The `button` prop takes precedence over the `href` and ~~`to`~~ props.
-- ~~For additional details on the `<router-link>` compatible props, please refer to the
-  [Router support reference section](/docs/reference/router-links).~~
+- Свойство `button` имеет приоритет над свойствами `href` и ~~`to`~~.
+- ~~Дополнительные сведения о свойствах, совместимых с `<router-link>`, смотрите в [Справочном разделе о поддержке маршрутизаторов](/docs/reference/router-links).~~
 
-## Badge avatars
+## Значки аватаров
 
-Easily add a badge to your avatar via the `badge` prop or `'badge'` slot, and the badge variant can
-be set via the `badge-variant` prop. The badge will scale with the size of the avatar.
+Легко добавьте значок на свой аватар с помощью свойств `badge` или слота `'badge'`, а вариант значка можно установить с помощью свойства `badge-variant`. Значок будет масштабироваться в зависимости от размера аватара.
 
 <ClientOnly>
   <b-card>
@@ -525,10 +492,9 @@ be set via the `badge-variant` prop. The badge will scale with the size of the a
 </b-card>
 ```
 
-### Badge content
+### Содержимое значка
 
-Add textual content to the badge by supplying a string to the `badge` prop, or use the named slot
-`'badge'`.
+Добавьте текстовое содержимое к значку, указав строку в свойстве `badge`, или используйте именованный слот `'badge'`.
 
 <ClientOnly>
   <b-card>
@@ -550,11 +516,9 @@ Add textual content to the badge by supplying a string to the `badge` prop, or u
 </b-card>
 ```
 
-### Badge positioning
+### Позиционирование значка
 
-By default, the badge appears on the bottom right of the avatar. You can use the `badge-top` and
-`badge-right` boolean props to switch the sides. Combine both props to move the badge to the top
-right of the avatar.
+По умолчанию значок отображается в правом нижнем углу аватара. Вы можете использовать логические свойства `badge-top` и `badge-right` для переключения сторон. Объедините оба реквизита, чтобы переместить значок в правый верхний угол аватара.
 
 <ClientOnly>
   <b-card>
@@ -574,9 +538,7 @@ right of the avatar.
 </b-card>
 ```
 
-Use the `badge-offset` prop to control the offset of the badge. The `badge-offset` must be a valid
-CSS length string (i.e. `'2px'`, `'-2px'`, `'0.5em'`, etc.). Positive values will move the badge
-inward, while negative values will move the badge outward.
+Используйте свойство `badge-offset` для управления смещением значка. `badge-offset` должен быть допустимой строкой длины CSS (например, `'2px'`, `'-2px'`, `'0.5em'` и т. д.). Положительные значения будут перемещать значок внутрь, а отрицательные значения будут перемещать значок наружу.
 
 <ClientOnly>
   <b-card>
@@ -604,9 +566,9 @@ inward, while negative values will move the badge outward.
 </b-card>
 ```
 
-## Avatar groups
+## Группы аватаров
 
-Group multiple avatars together by wrapping them in a `<b-avatar-group>` component:
+Сгруппируйте несколько аватаров вместе, заключив их в компонент `<b-avatar-group>`:
 
 <ClientOnly>
   <b-card>
@@ -636,16 +598,13 @@ Group multiple avatars together by wrapping them in a `<b-avatar-group>` compone
 </b-card>
 ```
 
-**Notes:**
+**Примечания:**
 
-- The `variant`, `square` and `rounded` props on `<b-avatar-group>` will take precedence over the
-  respective props on individual avatars.
+- `variant`, `square` и `rounded` свойства в группе `<b-avatar-group>` будут иметь приоритет над соответствующими реквизитами на отдельных аватарах.
 
-### Group size
+### Размер группы
 
-To size the avatars, use the prop `size` on `<b-avatar-group>`. The `size` prop accepts the same
-type of values as the `size` prop on `<b-avatar>`. Note that the `size` prop will be ignored on
-individual avatars when they are placed inside a `<b-avatar-group>`.
+Чтобы изменить размер аватаров, используйте свойство `size` в `<b-avatar-group>`. Свойство `size` принимает значения того же типа, что и свойство `size` на `<b-avatar>`. Обратите внимание, что свойство `size` будет игнорироваться для отдельных аватаров, если они помещены в `<b-avatar-group>`.
 
 <ClientOnly>
   <b-card>
@@ -671,10 +630,9 @@ individual avatars when they are placed inside a `<b-avatar-group>`.
 </b-card>
 ```
 
-### Group variant
+### Вариант группы
 
-Use the `variant` prop to color all child avatars in the `<b-avatar-group>`. Note that the `variant`
-prop, when set, will override the the `variant` specified on individual avatars.
+Используйте свойство `variant`, чтобы раскрасить все дочерние аватары в группе `<b-avatar-group>`. Обратите внимание, что параметр `variant`, если он установлен, переопределит параметр `variant`, указанный для отдельных аватаров.
 
 <ClientOnly>
   <b-card>
@@ -700,10 +658,9 @@ prop, when set, will override the the `variant` specified on individual avatars.
 </b-card>
 ```
 
-### Group rounding
+### Групповое округление
 
-Similar to the `variant` prop, the `<b-avatar-group>` props `square` and `rounded` take precedence
-over the respective props on individual child avatars.
+Подобно свойству `variant`, свойства `<b-avatar-group>` `square` и `rounded`, имеют приоритет над соответствующими свойствам на отдельных дочерних аватарах.
 
 <ClientOnly>
   <b-card>
@@ -729,11 +686,9 @@ over the respective props on individual child avatars.
 </b-card>
 ```
 
-### Group overlap
+### Перекрытие групп
 
-By default, child avatars inside a `<b-avatar-group>` will overlap by a factor of `0.3` (relative to
-the size of the avatar). You can control the overlap amount by setting the `overlap` prop to a value
-between `0` and `1`, where `0` means no overlap and `1` means 100% overlap.
+По умолчанию дочерние аватары внутри `<b-avatar-group>` будут перекрываться с коэффициентом `0.3` (относительно размера аватара). Вы можете контролировать величину перекрытия, установив свойство `overlap` на значение от `0` до `1`, где `0` означает отсутствие перекрытия, а `1` означает 100% перекрытие.
 
 <ClientOnly>
   <b-card>
@@ -759,25 +714,20 @@ between `0` and `1`, where `0` means no overlap and `1` means 100% overlap.
 </b-card>
 ```
 
-**Note:**
+**Примечание:**
 
-`overlap` only has an effect when you explicitly set the `size` property as well.
+`overlap` имеет эффект только тогда, когда вы также явно устанавливаете свойство `size`.
 
-## Accessibility
+## Доступность
 
-Use the `aria-label` prop to provide an accessible, screen reader friendly, label for your avatar.
-If you have a badge, it is recommended to add information to your aria-label regarding the badge
-purpose or content (i.g. `'3 messages'`, `'online'`, etc.).
+Используйте свойство `aria-label`, чтобы предоставить доступную, удобную для чтения с экрана метку для вашего аватара.
+Если у вас есть значок, рекомендуется добавить к вашей арии-метке информацию о назначении или содержании значка (например, `'3 messages'`, `'online'` и т. д.).
 
-While the `click` event is emitted regardless if the `button`, `href`, or `to` props are set, it is
-highly recommended using the `button` prop when the click event should trigger an action (or use
-the `to` or `href` props when changing routes or changing URLs) for accessibility reasons.
+Хотя событие `click` генерируется независимо от того, установлены ли свойства `button`, `href` или `to`, настоятельно рекомендуется использовать свойство `button`, когда событие клика должно инициировать действие (или использовать `to` или `href` при изменении маршрутов или URL-адресов) по соображениям доступности.
 
-## Implementation notes
+## Примечания по реализации
 
-Avatars are based upon `<b-badge>` and `<b-button>` components, and as such, rely upon Bootstrap's
-`badge-*` and `btn-*` variant classes, as well as the `rounded-*`
-[utility classes](/docs/reference/utility-classes).
+Аватары основаны на компонентах `<b-badge>` и `<b-button>`, и, как таковые, полагаются на варианты классов Bootstrap `badge-*` и `btn-*`, а также `rounded-*` [классы утилит](/docs/reference/utility-classes).
 
 <ClientOnly>
   <ComponentReference></ComponentReference>

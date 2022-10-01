@@ -3,7 +3,7 @@
   "name": "@bootstrap-vue-3/avatar",
   "version": "Alpha",
   "meta": {
-    "title": "Avatar",
+    "title": "Аватар",
     "description": "",
     "components": [
       {
@@ -89,7 +89,7 @@
             "args": [
               {
                 "arg": "click",
-                "description": "On click event",
+                "description": "Событие по клику",
                 "type": "MouseEvent"
               }
             ]
@@ -99,11 +99,11 @@
             "args": [
               {
                 "arg": "img-error",
-                "description": "On img-error",
+                "description": "При ошибке изображения",
                 "type": "Event"
               }
             ],
-            "description": "On image error"
+            "description": "При ошибке изображения"
           }
         ],
         "slots": [
