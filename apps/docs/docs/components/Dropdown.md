@@ -974,7 +974,7 @@ making headers more accessible for users of assistive technologies.
 Using the `<b-dropdown-group>` sub-component simplifies creating accessible grouped dropdown items
 with an associated header.
 
-## Accessibility
+## Доступность
 
 Providing a unique `id` prop ensures ARIA compliance by automatically adding the appropriate
 `aria-*` attributes in the rendered markup.
@@ -1042,7 +1042,7 @@ Note that <kbd>Down</kbd> and <kbd>Up</kbd> will not move focus into `<b-dropdow
 components, but users can still use <kbd>Tab</kbd> or <kbd>Shift</kbd>+<kbd>Tab</kbd> to move into
 form controls within the menu.
 
-## Implementation notes
+## Примечания по реализации
 
 The dropdown menu is rendered with semantic `<ul>` and `<li>` elements for accessibility reasons.
 The `.dropdown-menu` is the `<ul>` element, while dropdown items (items, buttons, text, form,

@@ -642,7 +642,7 @@ In some circumstances, you may need to adjust the `z-index` used by the overlay 
 positioning in the DOM or the content being obscured). Simply set the `z-index` prop with a value
 suitable for your application or use case. The default `z-index` is `10`.
 
-## Accessibility
+## Доступность
 
 Note that the overlay is visual only. You **must** disable any interactive elements (buttons, links,
 etc.) when the overlay is showing, otherwise the obscured elements will still be reachable via

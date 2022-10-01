@@ -447,7 +447,7 @@ There are restrictions on the use of floating labels
 - floating labels do not work in horizontal layout. Horizontal layout precedes the `floating` property. Do not set any of the `content-cols-` or `label-cols-` properties if you want floating labels.
 - the `<b-form-input>` must have a placeholder property set.
 
-## Accessibility
+## Доступность
 
 By default, when no `label-for` value is provided, `<b-form-group>` renders the input control(s)
 inside an HTML `<fieldset>` element with the label content placed inside the fieldset's `<legend>`

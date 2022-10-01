@@ -359,7 +359,7 @@ If using toggle button style for a radio or checkbox style interface, it is best
 Refer to the [`Router support`](/docs/reference/router-links) reference docs for the various
 supported `<router-link>` related props.
 
-## Accessibility
+## Доступность
 
 When the `href` prop is set to `'#'`, `<b-button>` will render a link (`<a>`) element with attribute
 `role="button"` set and appropriate keydown listeners (<kbd>Enter</kbd> and <kbd>Space</kbd>) so

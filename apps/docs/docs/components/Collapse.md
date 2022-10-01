@@ -368,7 +368,7 @@ The default slot can be optionally scoped. The following scope properties are av
 | `visible` | Boolean  | Visible state of the collapse        |
 | `close`   | Function | When called, will close the collapse |
 
-## Accessibility
+## Доступность
 
 The `v-b-toggle` directive will automatically add the ARIA attributes `aria-controls` and
 `aria-expanded` to the component that the directive appears on (as well as add the class `collapsed`
