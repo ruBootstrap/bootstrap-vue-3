@@ -3,8 +3,8 @@
   "name": "@bootstrap-vue-3/alert",
   "version": "Alpha",
   "meta": {
-    "title": "Alert",
-    "description": "Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.",
+    "title": "Уведомление",
+    "description": "Предоставляйте контекстные сообщения обратной связи для типичных действий пользователя с помощью нескольких доступных и гибких предупреждающих сообщений.",
     "components": [
       {
         "component": "BAlert",
@@ -12,12 +12,12 @@
           {
             "prop": "dismissLabel",
             "type": "string",
-            "description": "Value for the 'aria-label' attribute on the dismiss button"
+            "description": "Значение атрибута 'aria-label' на кнопке закрытия"
           },
           {
             "prop": "dismissible",
             "type": "Booleanish",
-            "description": "When set, enables the dismiss close button",
+            "description": "Если установлено, включает кнопку закрытия закрытия",
             "default": "abc"
           },
           {
@@ -28,17 +28,17 @@
           {
             "prop": "fade",
             "type": "Booleanish",
-            "description": "When set to true, enables the fade animation/transition on the component"
+            "description": "Если установлено значение true, включает анимацию затухания/переход на компоненте"
           },
           {
             "prop": "show",
             "type": "Booleanish",
-            "description": "When set, shows the alert. Do not use together with v-model"
+            "description": "Когда установлено, показывает предупреждение. Не использовать вместе с v-model"
           },
           {
             "prop": "variant",
             "type": "ColorVariant",
-            "description": "Applies one of the Bootstrap theme color variants to the component"
+            "description": "Применяет к компоненту один из цветовых вариантов темы Bootstrap"
           }
         ],
         "slots": [],
@@ -46,22 +46,22 @@
           {
             "args": [],
             "emit": "dismissed",
-            "description": "Alert dismissed either via the dismiss close button or when the dismiss countdown has expired"
+            "description": "Оповещение отклонено либо с помощью кнопки закрытия закрытия, либо по истечении обратного отсчета закрытия"
           },
           {
             "emit": "dismiss-count-down",
-            "description": "Content to place in the alert",
+            "description": "Содержимое для размещения в предупреждении",
             "args": [
               {
                 "arg": "dismissCountDown",
-                "description": " Time remaining to dismissed",
+                "description": " Осталось времени до отклонения",
                 "type": "number"
               }
             ]
           },
           {
             "emit": "update:modelValue",
-            "description": "Standard event to update the v-model",
+            "description": "Стандартное событие для обновления v-model",
             "args": [
               {
                 "arg": "update:modelValue",

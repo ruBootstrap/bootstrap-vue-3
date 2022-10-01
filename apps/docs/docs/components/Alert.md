@@ -1,11 +1,10 @@
-# Alert
+# Уведомление
 
-> Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+> Предоставляйте контекстные сообщения обратной связи для типичных действий пользователя с помощью нескольких доступных и гибких предупреждающих сообщений.
 
-## Overview
+## Обзор
 
-Alerts are available for any length of text, as well as an optional dismiss button (and optional
-auto-dismissing).
+Уведомления доступны для любой длины текста, а также для дополнительной кнопки закрытия (и дополнительной кнопки автоматического закрытия).
 
 <ClientOnly>
   <b-card>
@@ -80,27 +79,20 @@ auto-dismissing).
 </script>
 ```
 
-## Visible state
+## Видимое состояние
 
-Use the `show` prop to control the visibility state of the alert. By default, alerts are **not**
-shown. Set the prop `show` to explicitly display them.
+Используйте свойство `show` для управления состоянием видимости предупреждения. По умолчанию оповещения **не** отображаются. Установите свойство `show`, чтобы явно отображать их.
 
-The `show` prop accepts boolean `true` or `false` to show and hide the alert respectively.
+Свойство `show` принимает логическое значение `true` или `false` для отображения и скрытия предупреждения соответственно.
 
-### `v-model` support
+### Поддержка `v-model`
 
-You can use the `v-model` directive to create two-way data bindings as in
-`v-model="showDismissibleAlert"`. Useful when you use dismissible because when user closes the
-alert, your variable will be updated. Do not use the `show` prop when using `v-model`.
-The v-model prop accepts boolean `true` or `false` to show and hide the alert respectively, acting like the `show` prop. It can
-also be set to a positive integer (representing seconds) to create a self dismissing alert. See the
-[Auto Dismissing Alerts](#auto-dismissing-alerts) section below for details.
+Вы можете использовать директиву `v-model` для создания двусторонних привязок данных, как в
+`v-model="showDismissibleAlert"`. Полезно, когда вы используете отклонение, потому что, когда пользователь закрывает предупреждение, ваша переменная будет обновлена. Не используйте свойство `show` при использовании `v-model`. Свойство v-model принимает логическое значение `true` или `false` для отображения и скрытия оповещения соответственно, действуя как свойство `show`. Также можно установить положительное целое число (представляющее секунды), чтобы создать самозакрывающееся оповещение. Дополнительные сведения см. в разделе [Автоматическое закрытие предупреждений](#auto-dismissing-alerts) ниже.
 
-## Contextual variants
+## Контекстные варианты
 
-For proper styling of `<b-alert>`, use one of the four required contextual variants by setting the
-`variant` prop to one of the following: `info`, `success`, `warning` or `danger`. The default is
-`info`.
+Для правильного оформления `<b-alert>`, используйте один из четырех обязательных контекстных вариантов, установив свойство `variant` в одно из следующих значений: `info`, `success`, `warning` или `danger`. По умолчанию это `info`.
 
 <ClientOnly>
   <b-card>
@@ -126,17 +118,13 @@ For proper styling of `<b-alert>`, use one of the four required contextual varia
 <b-alert show variant="dark">Dark Alert</b-alert>
 ```
 
-### Conveying meaning to assistive technologies
+### Передача смысла вспомогательным технологиям
 
-Using color variants to add meaning only provides a visual indication, which will not be conveyed to
-users of assistive technologies – such as screen readers. Ensure that information denoted by the
-color is either obvious from the content itself (e.g. the visible text), or is included through
-alternative means, such as additional text hidden with the `.visually-hidden` class.
+Использование цветовых вариантов для добавления значения обеспечивает только визуальную индикацию, которая не будет передана пользователям вспомогательных технологий, таких как программы чтения с экрана. Убедитесь, что информация, обозначенная цветом, либо очевидна из самого содержимого (например, видимый текст), либо включена с помощью альтернативных средств, таких как дополнительный текст, скрытый с помощью класса `.visually-hidden`.
 
-## Additional content inside alerts
+## Дополнительный контент внутри предупреждений
 
-`<b-alerts>` can also contain additional HTML elements like headings and paragraphs, which will be
-styled with the appropriate color matching the variant.
+`<b-alerts>` может также содержать дополнительные элементы HTML, такие как заголовки и абзацы, которые будут окрашены в соответствующий цвет, соответствующий варианту.
 
 <ClientOnly>
   <b-card>
@@ -169,10 +157,10 @@ styled with the appropriate color matching the variant.
 </b-alert>
 ```
 
-### Color of links within alerts
+### Цвет ссылок в оповещениях
 
-Use the `.alert-link` utility CSS class to quickly provide matching colored links within any alert.
-Use on `<a>` or `<b-link>`.
+Используйте служебный CSS-класс `.alert-link`, чтобы быстро предоставить соответствующие цветные ссылки в любом предупреждении.
+Используйте на `<a>` или `<b-link>`.
 
 <ClientOnly>
   <b-card>
@@ -198,11 +186,9 @@ Use on `<a>` or `<b-link>`.
 <b-alert show variant="dark"><a href="#" class="alert-link">Dark Alert</a></b-alert>
 ```
 
-## Dismissible alerts
+## Закрываемые оповещения
 
-Using the `dismissible` prop it's possible to dismiss any `<b-alert>` inline. This will add a close
-`X` button. Use the `dismiss-label` prop to change the hidden label text associated with the dismiss
-button.
+Используя свойство `dismissible`, можно отклонить любой встроенный `<b-alert>`. Это добавит кнопку закрытия `X`. Используйте свойство `dismiss-label`, чтобы изменить текст скрытой метки, связанный с кнопкой закрытия.
 
 <ClientOnly>
   <b-card>
@@ -218,9 +204,9 @@ button.
 </b-alert>
 ```
 
-### Auto dismissing alerts
+### Автоматическое закрытие оповещений
 
-To create a `<b-alert>` that dismisses automatically after a period of time, set the `v-model` to the number of seconds you would like the `<b-alert>` to remain visible for. Only integer number of seconds are supported.
+Чтобы создать `<b-alert>`, который автоматически закрывается через определенный период времени, установите `v-model` на количество секунд, в течение которых вы хотите, чтобы `<b-alert>` оставалось видимым. Поддерживается только целое число секунд.
 
 <ClientOnly>
   <b-card>
