@@ -1,18 +1,18 @@
 <template>
-  <component :is="tag" class="placeholder" :class="classes" :style="computedStyle" />
+  <component :is="tag" class="placeholder" :class="computedClasses" :style="computedStyle" />
 </template>
 
 <script setup lang="ts">
 import {computed, StyleValue} from 'vue'
-import {ColorVariant} from '../../types'
+import type {ColorVariant, PlaceholderAnimation, PlaceholderSize} from '../../types'
 
 interface Props {
   tag?: string
   width?: string | number
   cols?: string | number
   variant?: ColorVariant
-  size?: 'xs' | 'sm' | 'lg'
-  animation?: 'glow' | 'wave'
+  size?: PlaceholderSize
+  animation?: PlaceholderAnimation
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -37,7 +37,7 @@ const colsString = computed<string | undefined>(() =>
     : props.cols
 )
 
-const classes = computed(() => ({
+const computedClasses = computed(() => ({
   [`col-${colsString.value}`]: colsString.value !== undefined && widthString.value === undefined,
   [`bg-${props.variant}`]: props.variant !== undefined,
   [`placeholder-${props.size}`]: props.size !== undefined,

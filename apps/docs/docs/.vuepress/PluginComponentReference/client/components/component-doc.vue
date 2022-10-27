@@ -215,7 +215,7 @@
   </div>
 </template>
 <script lang="ts">
-import { resolveComponent, defineComponent, computed, ComputedRef, ConcreteComponent, ref, Ref } from 'vue'
+import {resolveComponent, defineComponent, computed, ConcreteComponent, ref, Ref} from 'vue'
 import AnchoredHeading from './anchored-heading'
 import { hyphenate } from '../../../utils'
 // type definitions
@@ -263,7 +263,7 @@ export default defineComponent({
       props.component as string
     ) as ConcreteComponent
 
-    const componentPropsMetaObj: ComputedRef<any> = computed(() => {
+    const componentPropsMetaObj = computed(() => {
       return props.propsMeta.reduce((obj, propMeta) => {
         if (propMeta.prop) {
           obj[propMeta.prop] = propMeta
@@ -271,7 +271,7 @@ export default defineComponent({
         return obj
       }, {})
     })
-    const githubURL: ComputedRef<string> = computed(() => {
+    const githubURL = computed(() => {
       const name = component.name ?? component.__name ?? ''
       if (name.indexOf('{') !== -1) {
         // Example component (most likely an auto generated component)
@@ -285,14 +285,14 @@ export default defineComponent({
 
     // component name kebab
 
-    const componentName: ComputedRef<string> = computed(() => {
+    const componentName = computed(() => {
       return hyphenate(component.name ?? component.__name ?? '')
     })
-    const tag: ComputedRef<string> = computed(() => {
+    const tag = computed(() => {
       return `<${componentName.value}>`
     })
 
-    const propsItems: ComputedRef<any> = computed(() => {
+    const propsItems = computed(() => {
       const props: any = component.props
       const propsMetaObj = componentPropsMetaObj
       return Object.keys(props)
@@ -352,7 +352,7 @@ export default defineComponent({
         })
     })
 
-    const propFields: ComputedRef<any> = computed(() => {
+    const propFields = computed(() => {
       const sortable = propsItems.value.length >= SORT_THRESHOLD
 
       // TODO define Type for propItems
@@ -368,7 +368,7 @@ export default defineComponent({
       ]
     })
 
-    const emitsFields: ComputedRef<any> = computed(() => {
+    const emitsFields = computed(() => {
       const sortable = component.emits?.length >= SORT_THRESHOLD
       return [
         { key: 'emit', label: 'Эмит', sortable },
@@ -377,7 +377,7 @@ export default defineComponent({
       ]
     })
 
-    const slotsFields: ComputedRef<any> = computed(() => {
+    const slotsFields = computed(() => {
       const sortable = props.slots.length >= SORT_THRESHOLD
       const hasScopedSlots = props.slots.some(s => s.scope)
       return [
@@ -387,18 +387,18 @@ export default defineComponent({
       ]
     })
 
-    const slotsItems: Ref<any[]> = ref(
-      props.slots ? props.slots.map(slot => ({ ...slot as any })) : []
+    const slotsItems = ref(
+       props.slots ? props.slots.map(slot => ({ ...slot as any})) : []
     )
 
 
-    const vmodelItems: ComputedRef<any> = computed(() => {
+    const vmodelItems = computed(() => {
       //TODO loop through props and emits to determine v-model
       // let match = VMODEL_REGEX.exec(myString);
       return []
     })
 
-    const vmodelFields: ComputedRef<any> = computed(() => {
+    const vmodelFields = computed(() => {
       //TODO loop
       return []
     })

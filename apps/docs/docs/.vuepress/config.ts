@@ -83,6 +83,7 @@ export default defineUserConfig({
             '/components/Offcanvas.md',
             '/components/Overlay.md',
             '/components/Pagination.md',
+            '/components/Placeholder.md',
             '/components/Popover.md',
             '/components/Progress.md',
             '/components/Skeleton.md',

@@ -4,7 +4,7 @@
 
 <ClientOnly>
     <b-list-group>
-        <b-list-group-item v-for="(component, key)  in componentList">
+        <b-list-group-item v-for="(component, key)  in componentList" :key="key">
             <RouterLink :to="`./${key}.html`">{{component.name}}</RouterLink>
             <b-badge v-if="component.status=='todo'" variant="warning" pill>TODO</b-badge>
             <b-badge v-else-if="component.status=='wip'" variant="warning" pill>WIP</b-badge>
@@ -140,6 +140,10 @@ const componentList = {
     Pagination: {
         name: 'Pagination',
         description: 'Быстрые кнопки первая, предыдущая, следующая, последняя и кнопки страниц для управления разбиением на страницы другого компонента'
+    },
+    Placeholder: {
+        name: 'Placeholder',
+        description: 'Placeholder components can create a unique appearance to indicate something may still be loading'
     },
     Popover: {
         name: 'Popover',

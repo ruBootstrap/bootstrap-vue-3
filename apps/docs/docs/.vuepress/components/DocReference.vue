@@ -10,16 +10,9 @@
     >#</a> Справочник компонента
   </h2>
 
-  <template v-for="component in reference.meta.components">
-    <h3
-      :id="component.component"
-      tabindex="-1"
-    >
-      <a
-        class="header-anchor"
-        :href="`#${component.component}`"
-        aria-hidden="true"
-      >#</a>
+  <template v-for="(component, index) in reference.meta.components" :key="index">
+    <h3 :id="component.component" tabindex="-1">
+      <a class="header-anchor" :href="`#${component.component}`" aria-hidden="true">#</a>
       <code>&lt;{{ component.component }}&gt;</code>
     </h3>
 
@@ -46,7 +39,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="prop in component.props">
+          <tr v-for="(prop, index) in component.props" :key="index">
             <td class="text-nowrap">
               <code>{{ prop.prop }}</code>
             </td>
@@ -86,7 +79,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="event in component.events">
+          <tr v-for="(event, index) in component.events" :key="index">
             <td class="text-nowrap">
               <code>{{ event.event }}</code>
             </td>
@@ -116,7 +109,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="slot in component.slots">
+          <tr v-for="(slot, index) in component.slots" :key="index">
             <td class="text-nowrap">
               <code>{{ slot.name }}</code>
             </td>
