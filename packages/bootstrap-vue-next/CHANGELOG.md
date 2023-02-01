@@ -1,5 +1,97 @@
 # Changelog
 
+## [0.6.7](https://github.com/ruBootstrap/bootstrap-vue-next/compare/v0.7.0...v0.6.7) (2023-02-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* **BCarousel:** rename sliding-start to slide for Bootstrap compatibiliity
+* **BCarousel:** rename sliding-end to slid for Bootstrap compatibility
+* **BCarousel:** emit events use BvCarouselEvent
+* **BOffcanvas:** remove footer slot -- it is not in Bootstrap V5 (It was Bootstrap _sidebar_ prop, but this is not sidebar)
+* rename package to bootstrap-vue-next
+* change exports to match new name
+* **Icons:** remove Icons package indefinitely, please review new documentation section on how to include bootstrap-icons into your vue app!
+
+### Features
+
+* **_offcanvas.scss:** add custom scss ([96da79f](https://github.com/ruBootstrap/bootstrap-vue-next/commit/96da79f2d1a03743334624116e1177b3091620cb))
+* **BAlert:** add noHoverPause prop to pause countdown on hover ([a0d3e19](https://github.com/ruBootstrap/bootstrap-vue-next/commit/a0d3e191863cd6e91c288287bf8f91699122e01b))
+* **BCarousel:** add keyboard prop to prevent key actions -- equals keyboard: false for Bootstrap Carousel options ([2ab7da9](https://github.com/ruBootstrap/bootstrap-vue-next/commit/2ab7da9c76fa503d9a0420eb565839b4b38a990b))
+* **BCarousel:** add noHoverPause to stop pausing on hovering ([a0d3e19](https://github.com/ruBootstrap/bootstrap-vue-next/commit/a0d3e191863cd6e91c288287bf8f91699122e01b))
+* **BCarousel:** add prop fade, to use crossfade animation instead ([a0d3e19](https://github.com/ruBootstrap/bootstrap-vue-next/commit/a0d3e191863cd6e91c288287bf8f91699122e01b))
+* **BCarousel:** add prop ride to indicate to use "ride", or "carousel" as shown on bootstrap docs ([a0d3e19](https://github.com/ruBootstrap/bootstrap-vue-next/commit/a0d3e191863cd6e91c288287bf8f91699122e01b))
+* **BCarousel:** add prop rideReverse, so when carousel riding, tell it to go in reverse order ([a0d3e19](https://github.com/ruBootstrap/bootstrap-vue-next/commit/a0d3e191863cd6e91c288287bf8f91699122e01b))
+* **BCarousel:** create BvCarouselEvent that mimics Bootstrap ({from: number; to: number; direction: left | right}) ([2ab7da9](https://github.com/ruBootstrap/bootstrap-vue-next/commit/2ab7da9c76fa503d9a0420eb565839b4b38a990b))
+* **BCarousel:** emit events use BvCarouselEvent ([2ab7da9](https://github.com/ruBootstrap/bootstrap-vue-next/commit/2ab7da9c76fa503d9a0420eb565839b4b38a990b))
+* **BCarousel:** rename sliding-end to slid for Bootstrap compatibility ([2ab7da9](https://github.com/ruBootstrap/bootstrap-vue-next/commit/2ab7da9c76fa503d9a0420eb565839b4b38a990b))
+* **BCarousel:** rename sliding-start to slide for Bootstrap compatibiliity ([2ab7da9](https://github.com/ruBootstrap/bootstrap-vue-next/commit/2ab7da9c76fa503d9a0420eb565839b4b38a990b))
+* **BCarousel:** usage should be more straightforward. Active items are directly modified through the vmodel only ([a0d3e19](https://github.com/ruBootstrap/bootstrap-vue-next/commit/a0d3e191863cd6e91c288287bf8f91699122e01b))
+* **BCarousel:** use provide/inject for managing state ([f6bbba3](https://github.com/ruBootstrap/bootstrap-vue-next/commit/f6bbba3bad569b65a2938200605c32b52dda24a5))
+* **BOffcanvas:** add id prop ([234ab31](https://github.com/ruBootstrap/bootstrap-vue-next/commit/234ab31feba213bf99d8589dd5cde4656dd03d1a))
+* **BOffcanvas:** add lazy prop for lazy loading functionality ([234ab31](https://github.com/ruBootstrap/bootstrap-vue-next/commit/234ab31feba213bf99d8589dd5cde4656dd03d1a))
+* **BOffcanvas:** add noCloseOnBackdrop prop ([234ab31](https://github.com/ruBootstrap/bootstrap-vue-next/commit/234ab31feba213bf99d8589dd5cde4656dd03d1a))
+* **BOffcanvas:** add noCloseOnEsc prop ([234ab31](https://github.com/ruBootstrap/bootstrap-vue-next/commit/234ab31feba213bf99d8589dd5cde4656dd03d1a))
+* **BOffcanvas:** add noFocus prop ([234ab31](https://github.com/ruBootstrap/bootstrap-vue-next/commit/234ab31feba213bf99d8589dd5cde4656dd03d1a))
+* **BOffcanvas:** add prop backdropVariant ([177261c](https://github.com/ruBootstrap/bootstrap-vue-next/commit/177261c70a95841f14fe4c652c35b061171ef2fd))
+* **BOffcanvas:** add prop responsive ([177261c](https://github.com/ruBootstrap/bootstrap-vue-next/commit/177261c70a95841f14fe4c652c35b061171ef2fd))
+* **BOffcanvas:** add prop static to prevent teleporting ([234ab31](https://github.com/ruBootstrap/bootstrap-vue-next/commit/234ab31feba213bf99d8589dd5cde4656dd03d1a))
+* **BOffcanvas:** create preventable closing on component ([234ab31](https://github.com/ruBootstrap/bootstrap-vue-next/commit/234ab31feba213bf99d8589dd5cde4656dd03d1a))
+* **BOffcanvas:** expose a preventable Event when emitting show/shown/hide/hidden etc ([234ab31](https://github.com/ruBootstrap/bootstrap-vue-next/commit/234ab31feba213bf99d8589dd5cde4656dd03d1a))
+* **BOffcanvas:** remove footer slot -- it is not in Bootstrap V5 (It was Bootstrap _sidebar_ prop, but this is not sidebar) ([d9bd678](https://github.com/ruBootstrap/bootstrap-vue-next/commit/d9bd6784630730106ee862de77488bb4bdb92218))
+* **BOffcanvas:** revert responsive prop as it's not functional ([c549633](https://github.com/ruBootstrap/bootstrap-vue-next/commit/c549633b5ba8e0e747db18c18399541de7998ecf))
+* **BOffcanvas:** teleport to body by default ([234ab31](https://github.com/ruBootstrap/bootstrap-vue-next/commit/234ab31feba213bf99d8589dd5cde4656dd03d1a))
+* **BOverlay:** add noSpinner prop to remove the default spinner ([a98f9d0](https://github.com/ruBootstrap/bootstrap-vue-next/commit/a98f9d0220c6e2b40b0a25e4318c0c38e518681b))
+* **Icons:** remove Icons package indefinitely, please review new documentation section on how to include bootstrap-icons into your vue app! ([d3c13e0](https://github.com/ruBootstrap/bootstrap-vue-next/commit/d3c13e03fa53932541a9f3bd99e27bdec4d12a80))
+
+
+### Bug Fixes
+
+* **BOffcanvas:** add aria-modal="true" ([177261c](https://github.com/ruBootstrap/bootstrap-vue-next/commit/177261c70a95841f14fe4c652c35b061171ef2fd))
+* **BOffcanvas:** add role="dialog" ([177261c](https://github.com/ruBootstrap/bootstrap-vue-next/commit/177261c70a95841f14fe4c652c35b061171ef2fd))
+* **BOffcanvas:** fix transition states ([234ab31](https://github.com/ruBootstrap/bootstrap-vue-next/commit/234ab31feba213bf99d8589dd5cde4656dd03d1a))
+* **BOffcanvas:** offcanvas not displaying when mounting with modelValue true ([d9bd678](https://github.com/ruBootstrap/bootstrap-vue-next/commit/d9bd6784630730106ee862de77488bb4bdb92218))
+* **BOffcanvas:** remove spinner when opened ([e618207](https://github.com/ruBootstrap/bootstrap-vue-next/commit/e618207d6893751354cf4efcfe4c25891b5bc3e2))
+* **BOffcanvas:** strongly type offcanvas placement ([a25d0c6](https://github.com/ruBootstrap/bootstrap-vue-next/commit/a25d0c63eb6b5b4e4f58062d63a5cc6a1be0ce52))
+* **BOverlay:** accidentally leaving out toRef ([d4ca177](https://github.com/ruBootstrap/bootstrap-vue-next/commit/d4ca177388eedddf97d044f9e27cd26e9cf52229))
+* **BOverlay:** invert no-spinner prop ([964066f](https://github.com/ruBootstrap/bootstrap-vue-next/commit/964066f241b00604e77df348ab21bda54a558445))
+* **BTabs:** add role="presentation" ([465eb7a](https://github.com/ruBootstrap/bootstrap-vue-next/commit/465eb7ad692081d0423dc1520c186b8dd1c02b76))
+* **isEmptySlot:** fix checking for empty slots ([6652a4c](https://github.com/ruBootstrap/bootstrap-vue-next/commit/6652a4cbdea0defabc6074b11d023ce876802b9f))
+* issues with using "isEmptySlot" causing improper values in slot scopes ([324ddb9](https://github.com/ruBootstrap/bootstrap-vue-next/commit/324ddb9b590ca586805bbe55cb5b7ca95f66aecc))
+* move @vueuse/shared to dev dependency ([ee65801](https://github.com/ruBootstrap/bootstrap-vue-next/commit/ee65801a51184b068071cba1eb068fa12d683b81))
+* **nuxt.ts:** psuedo placeholder code causes issues when using nuxt.ts ([f8ca147](https://github.com/ruBootstrap/bootstrap-vue-next/commit/f8ca147633484a9c72452d48177831e4c91ef675))
+* **nuxt.ts:** psuedo placeholder code causes issues when using nuxt.ts ([#880](https://github.com/ruBootstrap/bootstrap-vue-next/issues/880)) ([87d326a](https://github.com/ruBootstrap/bootstrap-vue-next/commit/87d326ad0553319706c2ca0e83557b365258a469))
+* pnpm/dts issues causing missing files that require @vueuse/shared ([648fe41](https://github.com/ruBootstrap/bootstrap-vue-next/commit/648fe41ccdb866ae7a32babe66c53100186416d8))
+* **vitre.config:** add @popperjs/core to external deps ([3133871](https://github.com/ruBootstrap/bootstrap-vue-next/commit/31338714fbea3fe8ffb353a19305327de193f7a3))
+
+
+### Performance Improvements
+
+* **BModal:** use flush: 'post' instead of nextTick ([234ab31](https://github.com/ruBootstrap/bootstrap-vue-next/commit/234ab31feba213bf99d8589dd5cde4656dd03d1a))
+* **BOffcanvas:** replace nextTick with flush: 'post' in watcher ([234ab31](https://github.com/ruBootstrap/bootstrap-vue-next/commit/234ab31feba213bf99d8589dd5cde4656dd03d1a))
+
+
+### Reverts
+
+* App.vue to default ([e51972a](https://github.com/ruBootstrap/bootstrap-vue-next/commit/e51972a5dfcf8f07a288729ef74de207fc52492f))
+* **debde2104983a60a718147ee84593590ad80ec4e:** add back in footer slot on Offcanvas ([6612049](https://github.com/ruBootstrap/bootstrap-vue-next/commit/661204912ef8d511e9fac9f521436155a13c0a2d))
+
+
+### Code Refactoring
+
+* change exports to match new name ([089da12](https://github.com/ruBootstrap/bootstrap-vue-next/commit/089da12e6c88477420adf873639d54837c96a06c))
+* rename package to bootstrap-vue-next ([089da12](https://github.com/ruBootstrap/bootstrap-vue-next/commit/089da12e6c88477420adf873639d54837c96a06c))
+
+
+### Miscellaneous Chores
+
+* release 0.4.1 ([ea745b8](https://github.com/ruBootstrap/bootstrap-vue-next/commit/ea745b8a4bfbaf5f5699cde8264d328047579256))
+* release 0.4.2 ([01c1172](https://github.com/ruBootstrap/bootstrap-vue-next/commit/01c1172e05c4fb3359c17faf579f2e4600843646))
+* release 0.4.5 ([07e20c0](https://github.com/ruBootstrap/bootstrap-vue-next/commit/07e20c0a0ea135557ef6673c47faa954aa355490))
+* release 0.4.6 ([7c281ac](https://github.com/ruBootstrap/bootstrap-vue-next/commit/7c281acfcd73aec2d2d20abd529221759a8c143c))
+* release 0.6.6 ([857f5b3](https://github.com/ruBootstrap/bootstrap-vue-next/commit/857f5b329aac31601f380843ea69a6a0df267378))
+* release 0.6.7 ([5619a7b](https://github.com/ruBootstrap/bootstrap-vue-next/commit/5619a7b087b691264aae579ebe603d4e74922afc))
+
 ## [0.7.0](https://github.com/bootstrap-vue/bootstrap-vue-next/compare/v0.6.7...v0.7.0) (2023-02-01)
 
 
